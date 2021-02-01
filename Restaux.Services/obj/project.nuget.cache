@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "REqVR5Ku4QMlBKw0tVfFdsje+IXqLatVv0lOD+wGcAXQLryjOrfXi+YX5U8Kk65qnr7E22YRHO3e75EVsEfBXg==",
+  "success": true,
+  "projectFilePath": "D:\\AspNet2020\\ProjetsRestaurants\\Restaux.Services\\Restaux.Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\diall\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\diall\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
