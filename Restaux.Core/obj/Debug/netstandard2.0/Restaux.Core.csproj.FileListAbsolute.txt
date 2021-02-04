@@ -1,0 +1,4 @@
+D:\AspNet2020\ProjetsRestaurants\Restaux.Core\obj\Debug\netstandard2.0\Restaux.Core.csprojAssemblyReference.cache
+D:\AspNet2020\ProjetsRestaurants\Restaux.Core\obj\Debug\netstandard2.0\Restaux.Core.AssemblyInfoInputs.cache
+D:\AspNet2020\ProjetsRestaurants\Restaux.Core\obj\Debug\netstandard2.0\Restaux.Core.AssemblyInfo.cs
+D:\AspNet2020\ProjetsRestaurants\Restaux.Core\obj\Debug\netstandard2.0\Restaux.Core.csproj.CoreCompileInputs.cache
