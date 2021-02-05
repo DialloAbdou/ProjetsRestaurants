@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Restaux.Core.services
 {
+    /*
+     * la Couche service est la couche centrale de notre architecture, elle fait lien entre 
+     * la couche API et la couche Dal
+     * 
+     * **/
     public interface IRestoService
     {
         Task<Resto> GetRestoById(int id);
