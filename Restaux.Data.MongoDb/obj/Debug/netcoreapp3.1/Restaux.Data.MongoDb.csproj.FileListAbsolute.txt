@@ -1,0 +1,13 @@
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\bin\Debug\netcoreapp3.1\Restaux.Data.MongoDb.exe
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\bin\Debug\netcoreapp3.1\Restaux.Data.MongoDb.deps.json
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\bin\Debug\netcoreapp3.1\Restaux.Data.MongoDb.runtimeconfig.json
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\bin\Debug\netcoreapp3.1\Restaux.Data.MongoDb.runtimeconfig.dev.json
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\bin\Debug\netcoreapp3.1\Restaux.Data.MongoDb.dll
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\bin\Debug\netcoreapp3.1\Restaux.Data.MongoDb.pdb
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\obj\Debug\netcoreapp3.1\Restaux.Data.MongoDb.csprojAssemblyReference.cache
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\obj\Debug\netcoreapp3.1\Restaux.Data.MongoDb.AssemblyInfoInputs.cache
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\obj\Debug\netcoreapp3.1\Restaux.Data.MongoDb.AssemblyInfo.cs
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\obj\Debug\netcoreapp3.1\Restaux.Data.MongoDb.csproj.CoreCompileInputs.cache
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\obj\Debug\netcoreapp3.1\Restaux.Data.MongoDb.dll
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\obj\Debug\netcoreapp3.1\Restaux.Data.MongoDb.pdb
+D:\AspNet2020\ProjetsRestaurants\Restaux.Data.MongoDb\obj\Debug\netcoreapp3.1\Restaux.Data.MongoDb.genruntimeconfig.cache

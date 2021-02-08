@@ -7,10 +7,14 @@ namespace Restaux.Core
     public interface IUnitOfWork : IDisposable
     {
 
-        IUtilisateurRepository utilisateurs { get; }
-        ISondageRespository sondages { get; }
-        IVoteRespository votes { get; }
-        IRestoRepository restos { get; }
+        IUtilisateurRepository Utilisateurs { get; }
+
+        ISondageRespository Sondages { get; }
+
+        IVoteRespository Votes { get; }
+
+        IRestoRepository Restos { get; }
+
         Task<int> CommitAsync();
 
     }
