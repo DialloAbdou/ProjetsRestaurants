@@ -1,4 +1,5 @@
-﻿using Restaux.Core.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Restaux.Core.Models;
 using Restaux.Core.Repositories;
 using System;
 using System.Collections.Generic;
@@ -17,18 +18,20 @@ namespace Restaux.Data.Repositories
                 return Context as RestoDbContext;
             }
         }
-        public UtilisateurRepository()
+        public UtilisateurRepository(RestoDbContext restoDbContext)
+            :base(restoDbContext)
         {
 
         }
-        public Task<IEnumerable<Utilisateur>> GetAllUtisateurAsync()
+        public async Task<IEnumerable<Utilisateur>> GetAllUtisateurAsync()
         {
-            throw new NotImplementedException();
+            return await RestoDbContext.Utilisateurs.ToListAsync();
         }
 
-        public Task<Utilisateur> GetUtilisateurAsync(int id)
+        public async Task<Utilisateur> GetUtilisateurAsync(int id)
         {
-            throw new NotImplementedException();
+            return await RestoDbContext.Utilisateurs.SingleOrDefaultAsync(u => u.Id == id);
         }
+
     }
 }
