@@ -2,10 +2,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Restaux.Core;
+using Restaux.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +29,10 @@ namespace Restaux.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            // =======Configuration SQLServer=====
+
+            services.AddDbContext<RestoDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("RestoConexion"), x => x.MigrationsAssembly("Restaux.Data")));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

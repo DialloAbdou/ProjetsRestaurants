@@ -12,7 +12,7 @@ namespace Restaux.Data
     {
         private RestoDbContext _context;
         private IUtilisateurRepository _utilisateurRepository;
-        private IRestoRepository _restoRepository;
+        private IRestoRepository _restoRepository;  
 
         public UnitOfWork( RestoDbContext context)
         {
