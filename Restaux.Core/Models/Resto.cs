@@ -9,6 +9,9 @@ namespace Restaux.Core.Models
         public int Id { get; set; }
         public string Nom { get; set; }
         public string Telephone { get; set; }
+        public ICollection<Vote> Votes { get; set; }
+
+
 
     }
 }

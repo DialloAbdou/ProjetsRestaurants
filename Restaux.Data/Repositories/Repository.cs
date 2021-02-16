@@ -13,6 +13,7 @@ namespace Restaux.Data.Repositories
     {
         protected readonly RestoDbContext Context;
 
+
         public Repository(RestoDbContext context)
         {
             Context = context;
@@ -57,5 +58,16 @@ namespace Restaux.Data.Repositories
         {
             return await Context.Set<TEntity>().SingleOrDefaultAsync(predicate);
         }
+
+        public void Update(TEntity entity)
+        {
+            Context.Set<TEntity>().Update(entity);
+        }
+
+        public void UpdateRange(IEnumerable<TEntity> entities)
+        {
+            Context.Set<TEntity>().UpdateRange(entities);
+        }
+   
     }
 }
