@@ -19,15 +19,11 @@ namespace Restaux.Data.Configuration
                 .WithMany(v => v.Votes)
                 .HasForeignKey(v => v.UtilisateurId);
             builder
-              .HasOne(v => v.Resto)
-              .WithMany(v => v.Votes)
-              .HasForeignKey(v => v.RestoId);
-
+               .HasOne(v => v.Sondage)
+               .WithMany(v => v.Votes)
+               .HasForeignKey(v => v.SondageId);
                 
-            builder
-                .HasOne(v => v.Sondage)
-                .WithMany(v => v.Votes)
-                .HasForeignKey(v=>v.SondageId); 
+ 
 
         }
     }

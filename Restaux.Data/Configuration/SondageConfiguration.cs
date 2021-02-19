@@ -16,23 +16,11 @@ namespace Restaux.Data.Configuration
             builder
                 .Property(s => s.Id)
                 .UseIdentityColumn();
-
-            builder.Property(s => s.Date)
-                .IsRequired();
+            builder
+                .Property(s => s.Date)
+                .HasColumnType("Date");     
             builder
                 .ToTable("Sondages");
         }
     }
-
-    //builder
-    //              .HasKey(a => a.Id);
-    //        builder
-    //            .Property(m => m.Id)
-    //            .UseIdentityColumn();
-    //builder
-    //   .Property(m => m.Name)
-    //           .IsRequired()
-    //           .HasMaxLength(50);
-    //builder
-    //    .ToTable("Artists");
 }

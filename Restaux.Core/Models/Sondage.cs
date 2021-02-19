@@ -12,8 +12,9 @@ namespace Restaux.Core.Models
             Votes = new Collection<Vote>();
         }
         public int Id { get; set; }
+          //[Column(TypeName = "datetime2")]
         public DateTime Date { get; set; }
-        public ICollection<Vote> Votes { get; set; }
+        public ICollection<Vote> Votes { get; set; }    
 
     }
 }
