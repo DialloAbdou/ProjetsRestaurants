@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿    using Microsoft.EntityFrameworkCore;
 using Restaux.Core.Models;
 using Restaux.Data.Configuration;
 using System;
@@ -9,9 +9,11 @@ namespace Restaux.Data
 {
     public class RestoDbContext : DbContext
     {
-        public DbSet<Resto> Restos{ get; set; }
+        public DbSet<Resto> Restos { get; set; }
         public DbSet<Utilisateur> Utilisateurs { get; set; }
-        public RestoDbContext(DbContextOptions<RestoDbContext> options):base(options)
+        public DbSet<Sondage> Sondages { get; set; }
+        public DbSet<Vote> Votes { get; set; }
+        public RestoDbContext(DbContextOptions<RestoDbContext> options) : base(options)
         {
 
         }
@@ -20,6 +22,8 @@ namespace Restaux.Data
         {
             builder.ApplyConfiguration(new RestoConfiguration());
             builder.ApplyConfiguration(new UtilisateurConfiguration());
+            builder.ApplyConfiguration(new SondageConfiguration());
+            builder.ApplyConfiguration(new VoteConfiguration());
         }
 
 

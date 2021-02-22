@@ -27,5 +27,10 @@ namespace Restaux.Data.Repositories
         {
             return await RestoDbContext.Restos.FirstOrDefaultAsync(r => r.Id == id);
         }
+
+        public bool RestaurantExist(string nom)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

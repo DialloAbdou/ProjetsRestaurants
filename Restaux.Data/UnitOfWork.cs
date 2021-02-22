@@ -12,7 +12,9 @@ namespace Restaux.Data
     {
         private RestoDbContext _context;
         private IUtilisateurRepository _utilisateurRepository;
-        private IRestoRepository _restoRepository;  
+        private IRestoRepository _restoRepository;
+        private IVoteRespository _voteRespository;
+        private ISondageRespository _sondageRespository;
 
         public UnitOfWork( RestoDbContext context)
         {
@@ -21,6 +23,10 @@ namespace Restaux.Data
 
         public IUtilisateurRepository Utilisateurs => _utilisateurRepository = _utilisateurRepository ?? new UtilisateurRepository(_context);
         public IRestoRepository Restos => _restoRepository = _restoRepository ?? new RestoRepository(_context);
+
+        public IVoteRespository Votes => _voteRespository = _voteRespository ?? new VoteRepository(_context);
+
+        public ISondageRespository Sondages => throw new NotImplementedException();
 
         public async Task<int> CommitAsync()
         {

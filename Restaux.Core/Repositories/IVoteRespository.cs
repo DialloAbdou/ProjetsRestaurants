@@ -12,7 +12,5 @@ namespace Restaux.Core.Repositories
         Task<Vote> GetVoteByIdAsync(int id);
         Task AddVoteAsync(int idSondage, int idResto, int idUtilisateur);
 
-
-
     }
 }

@@ -10,8 +10,9 @@ namespace Restaux.Core.services
     {
         Task<IEnumerable<Utilisateur>> GetAllUtilisateur();
         Task<Utilisateur> GetUtilisateurById(int id);
-        Task AddUtilisateur(Utilisateur utilisateur);
-        Task updateUtilisateur(Utilisateur utilisateurUpdate, Utilisateur utilisateur);
+        Task<Utilisateur> CreateUtillisateur(Utilisateur utilisateur, string mdp);
+        void UpdateUtilisateur(Utilisateur utilisateur, string mdp = null);
+        void DeleteUtilisateur(int id);
 
     }
 }

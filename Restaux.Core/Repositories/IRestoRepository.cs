@@ -10,6 +10,8 @@ namespace Restaux.Core.Repositories
     {
         Task<IEnumerable<Resto>> GetAllRestoAsync();
         Task<Resto> GetRestoByIdAsync(int id);
+        bool RestaurantExist(string nom);      
+
 
 
 

@@ -20,6 +20,7 @@ namespace Restaux.Data.Configuration
             builder.Property(u => u.MotDePasse)
                 .IsRequired()
                 .HasMaxLength(8);
+         
             builder.ToTable("Utilisateurs");
         }
     }

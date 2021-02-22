@@ -8,7 +8,7 @@ using System.Text;
 namespace Restaux.Data.Configuration
 {
     public class RestoConfiguration : IEntityTypeConfiguration<Resto>
-    {
+    { 
         public void Configure(EntityTypeBuilder<Resto> builder)
         {
             builder.HasKey(r => r.Id);
@@ -20,6 +20,10 @@ namespace Restaux.Data.Configuration
             builder.Property(r => r.Telephone)
                 .IsRequired()
                 .HasMaxLength(10);
+            builder
+                .HasOne(r => r.Utilisateur)
+                .WithMany(r => r.Restos)
+                .HasForeignKey(r => r.utilisateurId);
             builder.ToTable("Restos");
         
         }

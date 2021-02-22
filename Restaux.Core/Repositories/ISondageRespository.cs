@@ -10,8 +10,8 @@ namespace Restaux.Core.Repositories
     {
         Task<IEnumerable<Sondage>> GetAllSondageAsync();
         Task<Sondage> GetSondageByIdAsync(int id);
-
-        Task<Int32> AddSondageAsync();
+        Task<Int32> CreateSondageAsync();
+        Task<IEnumerable<Resultat>>ObtenirLesResultats(int idSondage);
 
     }
 }

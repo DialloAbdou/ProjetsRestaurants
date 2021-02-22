@@ -9,6 +9,8 @@ namespace Restaux.Core
 
         IUtilisateurRepository Utilisateurs { get; }
         IRestoRepository Restos { get; }
+        IVoteRespository Votes { get; }
+        ISondageRespository Sondages { get; }
         Task<int> CommitAsync();
 
     }

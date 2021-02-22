@@ -33,5 +33,14 @@ namespace Restaux.Data.Repositories
             return await RestoDbContext.Utilisateurs.SingleOrDefaultAsync(u => u.Id == id);
         }
 
+        public Task<Utilisateur> Authentificate(string nom, string mpd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool AdejatVoter(int idSondage, int idUtil)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

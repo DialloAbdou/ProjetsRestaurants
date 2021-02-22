@@ -14,14 +14,17 @@ namespace Restaux.Data.Configuration
             builder.HasKey(v => v.Id);
             builder.Property(v => v.Id)
                 .UseIdentityColumn();
-            builder
-                .HasOne(v => v.Utilisateur)
-                .WithMany(v => v.Votes)
-                .HasForeignKey(v => v.UtilisateurId);
+           
             builder
                .HasOne(v => v.Sondage)
                .WithMany(v => v.Votes)
                .HasForeignKey(v => v.SondageId);
+            builder
+                .HasOne(v => v.Resto)
+                .WithMany(v => v.Votes)
+                .HasForeignKey(v => v.RestoId);
+          
+               
                 
  
 
