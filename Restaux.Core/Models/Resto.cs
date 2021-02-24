@@ -11,12 +11,9 @@ namespace Restaux.Core.Models
         {
             Votes = new Collection<Vote>();
         }
-  
         public int Id { get; set; }
         public string Nom { get; set; }
         public string Telephone { get; set; }
-        public int utilisateurId { get; set; }
-        public Utilisateur Utilisateur { get; set; }
         public  ICollection<Vote>Votes { get; set; }
 
     }

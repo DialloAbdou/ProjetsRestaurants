@@ -8,9 +8,9 @@ namespace Restaux.Core.Repositories
 {
     public interface ISondageRespository : IRepository<Sondage>
     {
-        Task<IEnumerable<Sondage>> GetAllSondageAsync();
-        Task<Sondage> GetSondageByIdAsync(int id);
-        Task<Int32> CreateSondageAsync();
+        Task<IEnumerable<Sondage>> GetAllWithVotesAsync();
+        Task<Sondage> GetWithVoteByIdAsync(int id);
+         int CreateSondage();
         Task<IEnumerable<Resultat>>ObtenirLesResultats(int idSondage);
 
     }

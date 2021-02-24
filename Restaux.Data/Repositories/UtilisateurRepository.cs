@@ -32,18 +32,9 @@ namespace Restaux.Data.Repositories
                          .FirstOrDefaultAsync(u => u.Prenom == nom && u.MotDePasse == mdp);
         }
 
-        public async Task<Utilisateur> GetWithRestoByIdAsync(int id)
-        {
-            return await RestoDbContext
-                       .Utilisateurs
-                       .Include(u => u.Restos)
-                       .SingleOrDefaultAsync(u => u.Id == id);
-        }
-
-        public bool AdejatVoter(int idSondage, int idUtil)
-        {
-            return false;
-        }
+        /*
+         * *
+         * **/
 
         public async Task<Utilisateur> CreateUtillisateur(Utilisateur utilisateur, string mdp)
         {
@@ -76,13 +67,31 @@ namespace Restaux.Data.Repositories
             RestoDbContext.Utilisateurs.Remove(user);
         }
 
-        public async Task<IEnumerable<Utilisateur>> GetAllWithRestoAsync()
+        public async Task<Utilisateur> GetUtilisateurByIdAsync(int id)
         {
             return await RestoDbContext
                 .Utilisateurs
-                .Include(u => u.Restos)
-                .ToListAsync();
+                .SingleOrDefaultAsync(u => u.Id == id);
+        }
 
+        public async Task<Utilisateur> GetUtilisateurWithVoteByIdAsync(int id)
+        {
+            return await RestoDbContext
+                .Utilisateurs
+                .Include(u => u.Votes)
+                .SingleOrDefaultAsync(u => u.Id == id);
+        }
+
+        public async Task<IEnumerable<Utilisateur>> GetAllUtilisateur()
+        {
+            return await RestoDbContext
+                         .Utilisateurs.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Utilisateur>> GetAllWithVotesAsync()
+        {
+            return await RestoDbContext
+                         .Utilisateurs.Include(u => u.Votes).ToListAsync();
         }
     }
 }

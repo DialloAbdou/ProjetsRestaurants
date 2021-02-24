@@ -17,3 +17,4 @@ namespace Restaux.Core.Models
 
     }
 }
+    

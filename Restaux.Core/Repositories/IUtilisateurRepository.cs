@@ -9,14 +9,22 @@ namespace Restaux.Core.Repositories
     public interface IUtilisateurRepository : IRepository<Utilisateur>
     {
         Task<Utilisateur> Authentificate(string nom, string mpd);
-        Task<Utilisateur> GetWithRestoByIdAsync(int id);
-        bool AdejatVoter(int idSondage, int idUtil);
+
         Task<Utilisateur> CreateUtillisateur(Utilisateur utilisateur, string mdp);
+        Task<Utilisateur> GetUtilisateurByIdAsync(int id);
+        Task<Utilisateur> GetUtilisateurWithVoteByIdAsync(int id);
+
         void UpdateUtilisateur(Utilisateur utilisateur, string mdp = null);
         void DeleteUtilisateur(int id);
-        Task<IEnumerable<Utilisateur>> GetAllWithRestoAsync();
+        Task<IEnumerable<Utilisateur>> GetAllUtilisateur();
+        Task<IEnumerable<Utilisateur>> GetAllWithVotesAsync();
+
+
+
 
 
     }
+
+
 }
 

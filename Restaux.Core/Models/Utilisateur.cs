@@ -11,13 +11,12 @@ namespace Restaux.Core.Models
 
         public Utilisateur()
         {
-            Restos = new Collection<Resto>();
+            Votes = new Collection<Vote>();
         }
         public int Id { get; set; }
         public string Prenom { get; set; }
         public string MotDePasse { get; set; }
-
-        public ICollection<Resto> Restos { get; set; }
+        public ICollection<Vote> Votes { get; set; }
 
     }
 }
