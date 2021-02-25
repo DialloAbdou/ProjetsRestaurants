@@ -26,7 +26,7 @@ namespace Restaux.Data
 
         public IVoteRespository Votes => _voteRespository = _voteRespository ?? new VoteRepository(_context);
 
-        public ISondageRespository Sondages => throw new NotImplementedException();
+        public ISondageRespository Sondages => _sondageRespository ?? new SondageRepository(_context);
 
         public async Task<int> CommitAsync()
         {

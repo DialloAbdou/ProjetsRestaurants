@@ -20,10 +20,6 @@ namespace Restaux.Data.Configuration
             builder.Property(r => r.Telephone)
                 .IsRequired()
                 .HasMaxLength(10);
-            builder
-                .HasOne(r => r.Utilisateur)
-                .WithMany(r => r.Restos)
-                .HasForeignKey(r => r.utilisateurId);
             builder.ToTable("Restos");
         
         }

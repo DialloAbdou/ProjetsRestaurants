@@ -23,6 +23,10 @@ namespace Restaux.Data.Configuration
                 .HasOne(v => v.Resto)
                 .WithMany(v => v.Votes)
                 .HasForeignKey(v => v.RestoId);
+            builder
+                .HasOne(u => u.Utilisateur)
+                .WithMany(u => u.Votes)
+                .HasForeignKey(u => u.UtilisateurId);
           
                
                 
