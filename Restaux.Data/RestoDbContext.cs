@@ -14,8 +14,7 @@ namespace Restaux.Data
         public DbSet<Sondage> Sondages { get; set; }
         public DbSet<Vote> Votes { get; set; }
         public RestoDbContext(DbContextOptions<RestoDbContext> options) : base(options)
-        {
-
+        { 
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
