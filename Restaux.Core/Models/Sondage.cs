@@ -13,8 +13,7 @@ namespace Restaux.Core.Models
         }
         public int Id { get; set; }
         public DateTime Date { get; set; }
-        public ICollection<Vote> Votes { get; set; }    
-
+        public ICollection<Vote> Votes { get; set; }  
     }
 }
     
