@@ -9,7 +9,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 using Restaux.Core;
+using Restaux.Core.Repositories;
 using Restaux.Data;
+using Restaux.Data.MongoDb.Repositories;
 using Restaux.Data.MongoDb.Setting;
 using System;
 using System.Collections.Generic;
@@ -45,6 +47,10 @@ namespace Restaux.API
 
             //===Connexion De MongoDb=====
             services.AddSingleton<IMongoClient, MongoClient>(_ => new MongoClient(Configuration.GetValue<string>("MongoDB:ConnectionString")));
+
+            //==Injection Repo====
+            services.AddScoped<IComposerRepository, ComposerRepository>();
+
 
         }
 
