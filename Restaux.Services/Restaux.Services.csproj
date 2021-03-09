@@ -4,4 +4,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Restaux.Core\Restaux.Core.csproj" />
+    <ProjectReference Include="..\Restaux.Data.MongoDb\Restaux.Data.MongoDb.csproj" />
+    <ProjectReference Include="..\Restaux.Data\Restaux.Data.csproj" />
+  </ItemGroup>
+
 </Project>
