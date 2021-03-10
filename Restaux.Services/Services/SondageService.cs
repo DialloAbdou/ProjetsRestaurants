@@ -30,9 +30,11 @@ namespace Restaux.Services.Services
             return await _UnitOfWork.Sondages.GetAllAsync();
         }
 
-        public Task<Sondage> GetSondage(int id)
+        public async Task<Sondage> GetSondage(int id)
         {
-            throw new NotImplementedException();
+            return await _UnitOfWork.Sondages.GetWithVoteByIdAsync(id);
+
+
         }
 
         public Task<IEnumerable<Resultat>> ObtenirLesResultats(int idSondage)
