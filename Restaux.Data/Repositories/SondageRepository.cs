@@ -48,24 +48,9 @@ namespace Restaux.Data.Repositories
                    .Include(s => s.Votes).SingleOrDefaultAsync(s => s.Id == id);
         }
 
-        public async Task<IEnumerable<Resultat>> ObtenirLesResultats(int idSondage)
-        {
-            ///ICollection<Resultat> resultats = new Collection<Resultat>();
-            throw new NotImplementedException();
-        }
+     
 
 
-        //    List<Resto> restaurants = ObtientTousLesRestaurants();
-        //    List<Resultats> resultats = new List<Resultats>();
-        //    Sondage sondage = bdd.Sondages.First(s => s.Id == idSondage);
-        //    foreach (IGrouping<int, Vote> grouping in sondage.Votes.GroupBy(v => v.Resto.Id))
-        //    {
-        //        int idRestaurant = grouping.Key;
-        //    Resto resto = restaurants.First(r => r.Id == idRestaurant);
-        //    int nombreDeVotes = grouping.Count();
-        //    resultats.Add(new Resultats { Nom = resto.Nom, Telephone = resto.Telephone, NombreDeVotes = nombreDeVotes
-        //});
-        //    }
-        //    return resultats;
+        
     }
 }

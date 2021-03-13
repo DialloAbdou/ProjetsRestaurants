@@ -42,26 +42,11 @@ namespace Restaux.Data.Repositories
             {
                 Resto = await RestoDbContext.Restos.FirstOrDefaultAsync(r => r.Id == idResto),
                 Utilisateur = await RestoDbContext.Utilisateurs.FirstOrDefaultAsync(u => u.Id == idUtilisateur),
-
             };
             Sondage sondage = await RestoDbContext.Sondages.SingleOrDefaultAsync(s => s.Id == idSondage);
             if (sondage == null)
                 sondage.Votes = new Collection<Vote>();
             sondage.Votes.Add(vote);
-
-
-            // Vote vote = new Vote
-            // {
-            //     Resto = bdd.Restos.First(r => r.Id == idResto),
-            //     Utilisateur = bdd.Utilisateurs.First(u => u.Id == idUtilisateur)
-            // };
-            //Sondage sondage = bdd.Sondages.First(s => s.Id == idSondage);
-            //if (sondage.Votes == null)
-            //    sondage.Votes = new List<Vote>();
-            //sondage.Votes.Add(vote);
-            //bdd.SaveChanges()
-
-
         }
 
         public bool AdejatVoter(int idSondage, int idUtil)
@@ -75,6 +60,21 @@ namespace Restaux.Data.Repositories
             {
                 return sondage.Votes.Any(u => u.Utilisateur.Id == idUtil);
             }
+        }
+
+        public async Task<IEnumerable<Resultat>> ObtenirLesResultats(int idSondage)
+        {
+            var restaurants = await RestoDbContext.Restos.ToListAsync();
+            var resultats = new List<Resultat>();
+            Sondage sondage = await RestoDbContext.Sondages.FirstAsync(s => s.Id == idSondage);
+            foreach(IGrouping<int,Vote>grouping in sondage.Votes.GroupBy(v=>v.Resto.Id))
+            {
+                int idRestaurant = grouping.Key;
+                Resto resto = restaurants.First(r => r.Id == idRestaurant);
+                int nmbreVotes = grouping.Count();
+                resultats.Add(new Resultat { Nom = resto.Nom, Telephone = resto.Telephone, NombreDeVotes = nmbreVotes });
+            }
+            return resultats;
         }
     }
 }

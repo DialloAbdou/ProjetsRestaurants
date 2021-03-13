@@ -1,9 +1,9 @@
+D:\AspNet2020\ProjetsRestaurants\Restaux.Core\bin\Debug\netstandard2.0\Restaux.Core.deps.json
+D:\AspNet2020\ProjetsRestaurants\Restaux.Core\bin\Debug\netstandard2.0\Restaux.Core.dll
+D:\AspNet2020\ProjetsRestaurants\Restaux.Core\bin\Debug\netstandard2.0\Restaux.Core.pdb
 D:\AspNet2020\ProjetsRestaurants\Restaux.Core\obj\Debug\netstandard2.0\Restaux.Core.csprojAssemblyReference.cache
 D:\AspNet2020\ProjetsRestaurants\Restaux.Core\obj\Debug\netstandard2.0\Restaux.Core.AssemblyInfoInputs.cache
 D:\AspNet2020\ProjetsRestaurants\Restaux.Core\obj\Debug\netstandard2.0\Restaux.Core.AssemblyInfo.cs
 D:\AspNet2020\ProjetsRestaurants\Restaux.Core\obj\Debug\netstandard2.0\Restaux.Core.csproj.CoreCompileInputs.cache
-D:\AspNet2020\ProjetsRestaurants\Restaux.Core\bin\Debug\netstandard2.0\Restaux.Core.deps.json
-D:\AspNet2020\ProjetsRestaurants\Restaux.Core\bin\Debug\netstandard2.0\Restaux.Core.dll
-D:\AspNet2020\ProjetsRestaurants\Restaux.Core\bin\Debug\netstandard2.0\Restaux.Core.pdb
 D:\AspNet2020\ProjetsRestaurants\Restaux.Core\obj\Debug\netstandard2.0\Restaux.Core.dll
 D:\AspNet2020\ProjetsRestaurants\Restaux.Core\obj\Debug\netstandard2.0\Restaux.Core.pdb

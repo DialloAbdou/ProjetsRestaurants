@@ -11,7 +11,6 @@ namespace Restaux.Core.Repositories
         Task<IEnumerable<Sondage>> GetAllWithVotesAsync();
         Task<Sondage> GetWithVoteByIdAsync(int id);
          int CreateSondage();
-        Task<IEnumerable<Resultat>>ObtenirLesResultats(int idSondage);
-
+  
     }
 }

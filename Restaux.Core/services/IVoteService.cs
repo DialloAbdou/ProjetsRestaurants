@@ -11,5 +11,7 @@ namespace Restaux.Core.services
         Task<IEnumerable<Vote>> GetAllVote();
         Task<Vote> GetVoteById(int id);
         Task AddVote(int idSondage, int idResto, int idUtilisateur);
+        bool AdejatVoter(int idSondage, int idUtil);
+        Task<IEnumerable<Resultat>> ObtenirLesResultats(int idSondage);
     }
 }

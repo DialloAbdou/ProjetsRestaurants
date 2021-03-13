@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "L5ZTjh3/eJgl3yNwpC7YfJlIK44GilqrZ1qnHWLdKaCs7QhY0HtlCI/BotpIRJBJBlhZEYqvPC1aLnpkvViWeQ==",
-  "success": false,
+  "dgSpecHash": "waAWhJ7faZoYuPC/xYDLiYmRilWpQPDO1jb/E92AoUWbjsSi1ulr/oNvsXlqjPIOduY69If+YOyfh0x94sdYoQ==",
+  "success": true,
   "projectFilePath": "D:\\AspNet2020\\ProjetsRestaurants\\Restaux.Services\\Restaux.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\diall\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
@@ -29,6 +29,7 @@
     "C:\\Users\\diall\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\diall\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\diall\\.nuget\\packages\\mongodb.bson\\2.12.0\\mongodb.bson.2.12.0.nupkg.sha512",
+    "C:\\Users\\diall\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -117,15 +118,5 @@
     "C:\\Users\\diall\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\diall\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Le projet Restaux.Data.MongoDb n'est pas compatible avec netstandard2.0 (.NETStandard,Version=v2.0). Le projet Restaux.Data.MongoDb prend en charge : netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
-      "libraryId": "Restaux.Data.MongoDb",
-      "targetGraphs": [
-        ".NETStandard,Version=v2.0"
-      ]
-    }
-  ]
+  "logs": []
 }

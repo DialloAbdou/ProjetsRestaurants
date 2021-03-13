@@ -11,7 +11,7 @@ namespace Restaux.Core.services
         Task<IEnumerable<Sondage>> GetAll();
         Task<Sondage> GetSondage(int id);
         Task<Int32> CreateSondage();
-        Task<IEnumerable<Resultat>> ObtenirLesResultats(int idSondage);
+    
 
      }
 }

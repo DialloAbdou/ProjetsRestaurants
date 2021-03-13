@@ -11,7 +11,7 @@ namespace Restaux.Core.services
      * la couche API et la couche Dal
      * 
      * **/
-    public interface IRestoService
+    public interface IRestoService 
     {
         Task<Resto> GetRestoById(int id);
         Task<IEnumerable<Resto>> GetAllArtist(); 
