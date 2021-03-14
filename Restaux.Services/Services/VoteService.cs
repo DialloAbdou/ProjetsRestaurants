@@ -18,29 +18,21 @@ namespace Restaux.Services.Services
 
         }
 
-            public async Task AddVote(int idSondage, int idResto, int idUtilisateur)
-            {
-                   _unitOfWork.Votes.
-            }
-
-        public bool AdejatVoter(int idSondage, int idUtil)
+        /****/
+        public async Task<IEnumerable<Vote>> GetAllVote()
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.Votes.GetAllAsync();
+           
         }
 
-        public Task<IEnumerable<Vote>> GetAllVote()
+        public async Task<Vote> GetVoteById(int id)
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.Votes.GetByIdAsync(id);
         }
 
-        public Task<Vote> GetVoteById(int id)
+        public async Task<IEnumerable<Resultat>> ObtenirLesResultats(int idSondage)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Resultat>> ObtenirLesResultats(int idSondage)
-        {
-            throw new NotImplementedException();
+            return await _unitOfWork.Votes.ObtenirLesResultats(idSondage);
         }
     }
 }

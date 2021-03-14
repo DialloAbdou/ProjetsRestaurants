@@ -60,7 +60,6 @@ namespace Restaux.Data.MongoDb.Repositories
             var update = Builders<Composer>.Update.Set("FirstName", composer.FirstName).Set("LastName", composer.LastName);
             _Context.Composers.FindOneAndUpdate(filter, update);
 
-
         }
     }
 }
