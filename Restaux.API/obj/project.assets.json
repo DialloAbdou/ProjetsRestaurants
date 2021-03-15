@@ -1447,6 +1447,20 @@
         "runtime": {
           "bin/placeholder/Restaux.Data.MongoDb.dll": {}
         }
+      },
+      "Restaux.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Restaux.Core": "1.0.0",
+          "Restaux.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Restaux.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Restaux.Services.dll": {}
+        }
       }
     }
   },
@@ -5385,6 +5399,11 @@
       "type": "project",
       "path": "../Restaux.Data.MongoDb/Restaux.Data.MongoDb.csproj",
       "msbuildProject": "../Restaux.Data.MongoDb/Restaux.Data.MongoDb.csproj"
+    },
+    "Restaux.Services/1.0.0": {
+      "type": "project",
+      "path": "../Restaux.Services/Restaux.Services.csproj",
+      "msbuildProject": "../Restaux.Services/Restaux.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5393,7 +5412,8 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.1",
       "MongoDB.Driver >= 2.12.0",
       "Restaux.Data >= 1.0.0",
-      "Restaux.Data.MongoDb >= 1.0.0"
+      "Restaux.Data.MongoDb >= 1.0.0",
+      "Restaux.Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5433,6 +5453,9 @@
             },
             "D:\\AspNet2020\\ProjetsRestaurants\\Restaux.Data\\Restaux.Data.csproj": {
               "projectPath": "D:\\AspNet2020\\ProjetsRestaurants\\Restaux.Data\\Restaux.Data.csproj"
+            },
+            "D:\\AspNet2020\\ProjetsRestaurants\\Restaux.Services\\Restaux.Services.csproj": {
+              "projectPath": "D:\\AspNet2020\\ProjetsRestaurants\\Restaux.Services\\Restaux.Services.csproj"
             }
           }
         }

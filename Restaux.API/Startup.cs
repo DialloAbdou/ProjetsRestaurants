@@ -10,9 +10,11 @@ using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 using Restaux.Core;
 using Restaux.Core.Repositories;
+using Restaux.Core.services;
 using Restaux.Data;
 using Restaux.Data.MongoDb.Repositories;
 using Restaux.Data.MongoDb.Setting;
+using Restaux.Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,6 +52,10 @@ namespace Restaux.API
 
             //==Injection Repo====
             services.AddScoped<IComposerRepository, ComposerRepository>();
+            //=====Injection Services==========
+            services.AddTransient<IRestoService, RestoService>();
+            services.AddTransient<ISondageService, SondageService>();
+            services.AddTransient<IVoteService, VoteService>();
 
 
         }

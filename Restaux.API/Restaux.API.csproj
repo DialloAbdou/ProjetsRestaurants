@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Restaux.Data.MongoDb\Restaux.Data.MongoDb.csproj" />
     <ProjectReference Include="..\Restaux.Data\Restaux.Data.csproj" />
+    <ProjectReference Include="..\Restaux.Services\Restaux.Services.csproj" />
   </ItemGroup>
 
 
