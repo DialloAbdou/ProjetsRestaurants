@@ -14,9 +14,15 @@ namespace Restaux.Core.Models
             Votes = new Collection<Vote>();
         }
         public int Id { get; set; }
+        public string Nom { get; set; }
         public string Prenom { get; set; }
-        public string MotDePasse { get; set; }
-        public ICollection<Vote> Votes { get; set; }
+        public string NomUtilisateur { get; set; }
+        public ICollection<Vote> Votes { get; set;}
+        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
+
+        public bool IsAdmin { get; set; }
+
 
     }
 }

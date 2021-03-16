@@ -14,12 +14,15 @@ namespace Restaux.Data.Configuration
             builder.HasKey(u => u.Id);
             builder.Property(u => u.Id)
                 .UseIdentityColumn();
+            builder.Property(u => u.Nom)
+                .IsRequired()
+                .HasMaxLength(30);
             builder.Property(u=> u.Prenom)
                 .IsRequired()
                 .HasMaxLength(30);
-            builder.Property(u => u.MotDePasse)
+            builder.Property(u => u.NomUtilisateur)
                 .IsRequired()
-                .HasMaxLength(8);
+                .HasMaxLength(30);
          
             builder.ToTable("Utilisateurs");
         }

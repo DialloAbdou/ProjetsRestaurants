@@ -8,12 +8,14 @@ namespace Restaux.Core.services
 {
     public interface IUtilisateurService
     {
-        Task<IEnumerable<Utilisateur>> GetAllUtilisateur();
-        Task<Utilisateur> GetUtilisateurById(int id);
+        Task<Utilisateur> Authentificate(string nom, string mpd);
         Task<Utilisateur> CreateUtillisateur(Utilisateur utilisateur, string mdp);
+        Task<Utilisateur> GetUtilisateurByIdAsync(int id);
+        Task<Utilisateur> GetUtilisateurWithVoteByIdAsync(int id);
         void UpdateUtilisateur(Utilisateur utilisateur, string mdp = null);
         void DeleteUtilisateur(int id);
-
+        Task<IEnumerable<Utilisateur>> GetAllUtilisateur();
+        Task<IEnumerable<Utilisateur>> GetAllWithVotesAsync();
     }
 }
 

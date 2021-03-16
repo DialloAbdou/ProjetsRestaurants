@@ -12,6 +12,5 @@ namespace Restaux.Core
         IVoteRespository Votes { get; }
         ISondageRespository Sondages { get; }
         Task<int> CommitAsync();
-
     }
 }
