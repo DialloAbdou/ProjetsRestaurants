@@ -13,7 +13,7 @@ namespace Restaux.Core.Models
         {
             Votes = new Collection<Vote>();
         }
-        public int Id { get; set; }
+        public int Id { get; set; } 
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string NomUtilisateur { get; set; }

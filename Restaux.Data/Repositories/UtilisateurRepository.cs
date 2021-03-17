@@ -25,9 +25,17 @@ namespace Restaux.Data.Repositories
 
         }
 
-        public Task<Utilisateur> Authentificate(string nom, string mpd)
+        public async Task<Utilisateur> Authentificate(string nom, string mpd)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(nom) || string.IsNullOrEmpty(mpd))
+                return null;
+            var utilisateur = await RestoDbContext.Utilisateurs.FirstOrDefaultAsync(u => u.NomUtilisateur == nom);
+            if (utilisateur == null) return null;
+            if (!VerifyPasswordHash(mpd, utilisateur.PasswordHash, utilisateur.PasswordSalt)) return null;
+
+            //// authentication successful
+            return utilisateur;
+
         }
 
         public Task<Utilisateur> CreateUtillisateur(Utilisateur utilisateur, string mdp)
@@ -65,73 +73,53 @@ namespace Restaux.Data.Repositories
             throw new NotImplementedException();
         }
 
-        //public async Task<Utilisateur> Authentificate(string nom, string mdp)
-        //{
-        //    return await RestoDbContext 
-        //                 .Utilisateurs
-        //                 .FirstOrDefaultAsync(u => u.Prenom == nom && u.MotDePasse == mdp);
-        //}
+        private static bool VerifyPasswordHash(string password,  byte[] storedHash, byte[] storedSalt)
+        {
+            if (password == null) throw new ArgumentNullException(password);
+            if (string.IsNullOrWhiteSpace(password)) throw new ArgumentException("value cannot or whitespace only string");
+            if (storedHash.Length != 64) throw new ArgumentException("Invalid length of password hash (64 bytese)", "passwordHash");
+            if (storedSalt.Length != 128) throw new ArgumentException("Invalid length of password sald (128 bytes expect).", "passwordHash");
+            using(var hamac = new System.Security.Cryptography.HMACSHA512(storedSalt))
+            {
+                var computedHash = hamac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                for(int i =0; i< computedHash.Length; i++)
+                {
+                    if (computedHash[i] != storedHash[i]) return false;
+                }
+               
 
-        ///*
-        // * *
-        // * **/
+            }
+            return true;
+        }
 
-        //public async Task<Utilisateur> CreateUtillisateur(Utilisateur utilisateur, string mdp)
+        //private static bool VerifyPasswordHash(string password, byte[] storedHash, byte[] storedSalt)
         //{
-        //    throw new NotImplementedException();
-        //}
+        //    if (password == null) throw new ArgumentNullException("password");
+        //    if (string.IsNullOrWhiteSpace(password)) throw new ArgumentException("Value cannot be empty or whitespace only string.", "password");
+        //    if (storedHash.Length != 64) throw new ArgumentException("Invalid length of password hash (64 bytes expected).", "passwordHash");
+        //    if (storedSalt.Length != 128) throw new ArgumentException("Invalid length of password salt (128 bytes expected).", "passwordHash");
 
-        //public void UpdateUtilisateur(Utilisateur utilisateur, string mdp = null)
-        //{
-        //    var user = RestoDbContext.Utilisateurs.Find(utilisateur.Id);
-        //    if (user == null) throw new Exception("utilisateur n'existe pas");
-        //    if(utilisateur.Prenom != user.Prenom)
+        //    using (var hmac = new System.Security.Cryptography.HMACSHA512(storedSalt))
         //    {
-        //        if (RestoDbContext.Utilisateurs.Any(u => u.Prenom == utilisateur.Prenom))
-        //            throw new Exception("Utisateur " + utilisateur.Prenom + " il est tjs prise");
+        //        var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+        //        for (int i = 0; i < computedHash.Length; i++)
+        //        {
+        //            if (computedHash[i] != storedHash[i]) return false;
+        //        }
         //    }
 
-        //    user.Prenom = utilisateur.Prenom;
-        //    user.MotDePasse = mdp;
-        //    RestoDbContext.Utilisateurs.Update(user);
-
-        //    // === Voir la suite Apres===
-
-
+        //    return true;
         //}
+        //if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+        //        return null;
+        //    var user = await MyMusicDbContext.Users.SingleOrDefaultAsync(x => x.Username == username);
+        //    if (user == null) return null;
+        //    // check if password is correct
+        //    if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+        //        return null;
 
-        //public void DeleteUtilisateur(int id)
-        //{
-        //    var user = RestoDbContext.Utilisateurs.FirstOrDefault(u => u.Id == id);
-        //    if (user == null) throw new Exception("utilisateur n'existe pas");
-        //    RestoDbContext.Utilisateurs.Remove(user);
-        //}
+        //    // authentication successful
+        //    return user;
 
-        //public async Task<Utilisateur> GetUtilisateurByIdAsync(int id)
-        //{
-        //    return await RestoDbContext
-        //        .Utilisateurs
-        //        .SingleOrDefaultAsync(u => u.Id == id);
-        //}
-
-        //public async Task<Utilisateur> GetUtilisateurWithVoteByIdAsync(int id)
-        //{
-        //    return await RestoDbContext
-        //        .Utilisateurs
-        //        .Include(u => u.Votes)
-        //        .SingleOrDefaultAsync(u => u.Id == id);
-        //}
-
-        //public async Task<IEnumerable<Utilisateur>> GetAllUtilisateur()
-        //{
-        //    return await RestoDbContext
-        //                 .Utilisateurs.ToListAsync();
-        //}
-
-        //public async Task<IEnumerable<Utilisateur>> GetAllWithVotesAsync()
-        //{
-        //    return await RestoDbContext
-        //                 .Utilisateurs.Include(u => u.Votes).ToListAsync();
-        //}
     }
 }
